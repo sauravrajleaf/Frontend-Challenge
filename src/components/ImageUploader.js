@@ -5,6 +5,12 @@ import "./ImageUploader.css";
 import image from "./image.jpg";
 const ImageUploader = () => {
   const [uploadImage, setUploadImage] = useState(null);
+  const [clicked, setClicked] = useState({
+    click: false,
+    fileName: "",
+  });
+
+  const { click, fileName, img_data } = clicked;
 
   const imageHandler = (e) => {
     const reader = new FileReader();
@@ -15,11 +21,26 @@ const ImageUploader = () => {
       }
     };
     reader.readAsDataURL(e.target.files[0]);
+    setClicked({
+      ...clicked,
+      click: true,
+      fileName: e.target.files[0].name,
+    });
   };
 
   const inputBtnActive = () => {
     const input_active = document.querySelector("#input-active");
     input_active.click();
+  };
+
+  const handleClose = () => {
+    setClicked({
+      ...clicked,
+      img_data: null,
+      click: false,
+      fileName: null,
+    });
+    setUploadImage(null);
   };
 
   return (
@@ -35,10 +56,13 @@ const ImageUploader = () => {
             </div>
             <div className="text">No file chosen.</div>
           </div>
-          <div className="close-btn">
-            <i className="fas fa-times"></i>
-          </div>
-          <div className="file-name">File Name Here</div>
+          {click && (
+            <div className="close-btn" onClick={handleClose}>
+              <i className="fas fa-times"></i>
+            </div>
+          )}
+
+          {click && <div className="file-name">{fileName}</div>}
         </div>
 
         <input
