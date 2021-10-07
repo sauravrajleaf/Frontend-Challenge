@@ -4,7 +4,7 @@ import Reactions from "../reactions/Reactions";
 
 import "./ImageUploader.css";
 
-const ImageUploader = () => {
+const ImageUploader = (props) => {
   const [uploadImage, setUploadImage] = useState(null);
   const [clicked, setClicked] = useState({
     click: false,
@@ -42,6 +42,7 @@ const ImageUploader = () => {
       fileName: null,
     });
     setUploadImage(null);
+    localStorage.removeItem("Total Reactions");
   };
 
   return (
@@ -76,7 +77,7 @@ const ImageUploader = () => {
           hidden
         />
         <span className="span">Only jpeg or jpg files are allowed.</span>
-        <Reactions />
+        <Reactions click={click} />
         <button className="select-btn" onClick={inputBtnActive}>
           Select An Image
         </button>

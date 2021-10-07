@@ -26,7 +26,11 @@
   opacity: 1;
   pointer-events: auto;
 }
-
+span {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+}
 .span-2 {
   position: relative;
   height: 60px;
@@ -37,7 +41,9 @@
   border-radius: 50%;
   text-align: center;
 }
-
+.reactions-count {
+  color: black;
+}
 .far {
   font-size: 35px;
   top: 12px;
