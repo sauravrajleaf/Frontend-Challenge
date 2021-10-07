@@ -1,6 +1,6 @@
 import React from "react";
 
-import ImageUploader from "./components/ImageUploader";
+import ImageUploader from "./components/imageUploader/ImageUploader";
 
 const App = () => {
   return <ImageUploader />;
