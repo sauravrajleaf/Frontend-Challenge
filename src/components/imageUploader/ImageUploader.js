@@ -37,7 +37,6 @@ const ImageUploader = (props) => {
   const handleClose = () => {
     setClicked({
       ...clicked,
-      img_data: null,
       click: false,
       fileName: null,
     });
@@ -55,7 +54,7 @@ const ImageUploader = (props) => {
           </div>
           <div className="content">
             <div className="icon">
-              <i className="fas fa-cloud-upload-alt"></i>
+              <i class="fas fa-cloud-upload-alt"></i>
             </div>
             <div className="text">No file chosen.</div>
           </div>

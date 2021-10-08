@@ -41,6 +41,7 @@ const Reactions = (props) => {
           </span>
         </div>
       </div>
+
       {click && reactionsCount !== 0 && (
         <span>
           <strong>Reactions Count: </strong>

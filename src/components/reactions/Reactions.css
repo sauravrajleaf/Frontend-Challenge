@@ -22,7 +22,7 @@
 }
 
 .icon-2:hover .tooltip {
-  top: -75px;
+  top: -50px;
   opacity: 1;
   pointer-events: auto;
 }
@@ -47,7 +47,7 @@ span {
 .far {
   font-size: 35px;
   top: 12px;
-  right: 12.5px;
+  right: 12px;
   position: absolute;
   color: #808080;
 }
