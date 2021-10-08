@@ -14,19 +14,21 @@ const ImageUploader = (props) => {
   const { click, fileName } = clicked;
 
   const imageHandler = (e) => {
-    const reader = new FileReader();
+    if (e.target.files[0].name.match(/.(jpg|jpeg)$/i)) {
+      const reader = new FileReader();
 
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setUploadImage(reader.result);
-      }
-    };
-    reader.readAsDataURL(e.target.files[0]);
-    setClicked({
-      ...clicked,
-      click: true,
-      fileName: e.target.files[0].name,
-    });
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setUploadImage(reader.result);
+        }
+      };
+      reader.readAsDataURL(e.target.files[0]);
+      setClicked({
+        ...clicked,
+        click: true,
+        fileName: e.target.files[0].name,
+      });
+    } else alert("wrong file");
   };
 
   const inputBtnActive = () => {
