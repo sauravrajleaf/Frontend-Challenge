@@ -4,7 +4,7 @@ import Reactions from "../reactions/Reactions";
 
 import "./ImageUploader.css";
 
-const ImageUploader = (props) => {
+const ImageUploader = () => {
   const [uploadImage, setUploadImage] = useState(null);
   const [clicked, setClicked] = useState({
     click: false,
