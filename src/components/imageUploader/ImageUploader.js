@@ -28,7 +28,8 @@ const ImageUploader = (props) => {
         click: true,
         fileName: e.target.files[0].name,
       });
-    } else alert("wrong file");
+    } else
+      alert("Invalid file chosen.Please choose file of type: (jpeg or jpg)");
   };
 
   const inputBtnActive = () => {
